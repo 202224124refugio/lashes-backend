@@ -1,27 +1,11 @@
-// servidor.js
-require('dotenv').config();
+require('dotenv').config(); // Quitamos la ruta específica './admin.env' ya que lo borramos
+
 const app = require('./app');
-const mongoose = require('mongoose');
 
-// Conectar a MongoDB
-async function conectarMongo() {
-    try {
-        await mongoose.connect(process.env.CADENA_CONEXION_DB, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log('Conectado a MongoDB Atlas');
-    } catch (err) {
-        console.error('Error al conectar a MongoDB Atlas:', err);
-    }
-}
+// Definimos el puerto
+const PUERTO = process.env.PUERTO || 3000;
 
-conectarMongo();
-
-// Solo levantar servidor en desarrollo local
-if (process.env.NODE_ENV !== 'production') {
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => console.log(`Servidor escuchando en puerto ${PORT}`));
-}
-
-module.exports = app;
+// Como la conexión a la BD ya está en app.js, aquí solo iniciamos el "listener"
+app.listen(PUERTO, () => {
+    console.log(`🚀 Servidor ejecutándose localmente en el puerto ${PUERTO}`);
+});
