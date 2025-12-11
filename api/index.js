@@ -1,4 +1,4 @@
 const serverless = require('serverless-http');
-const app = require('../servidor'); // ruta correcta
+const app = require('../servidor'); // Ajusta la ruta si tu servidor está en otra carpeta
 
-module.exports = server = serverless(app);
+module.exports = serverless(app);
