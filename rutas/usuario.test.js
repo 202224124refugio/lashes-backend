@@ -15,7 +15,7 @@ test('Verifica que Jest funciona', () => {
 describe('POST /crear-usuario', () => {
 
 
-    test('Debe crear un usuario y devolver status 201', async() => {
+    test('Debe crear un usuario y devolver status 201', async () => {
 
 
         const response = await request(app)
@@ -33,7 +33,7 @@ describe('POST /crear-usuario', () => {
     });
 
 
-    test('Debe fallar si la contraseña está ausente y devolver status 400', async() => {
+    test('Debe fallar si la contraseña está ausente y devolver status 400', async () => {
 
         const usuarioInvalido = { nombre: 'Invalido', correo: 'fail@test.com' };
 
