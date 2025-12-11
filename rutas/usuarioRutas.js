@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const crud = require('../controladores/usuario/usuarioCrud'); // ruta corregida
+const crud = require('../controlador/usuario/usuarioCrud');
+// ruta corregida
 const auth = require('../middleware/auth');
 
 // Crear usuario
