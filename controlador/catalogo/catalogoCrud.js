@@ -1,6 +1,6 @@
 const Catalogo = require('../../modelos/catalogo');
 
-// 🟢 Crear Producto (Esta es la que usa tu AdminPanel)
+
 exports.crearProducto = async(req, res) => {
     try {
         console.log('📨 Datos recibidos para producto:', req.body);

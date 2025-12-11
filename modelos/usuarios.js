@@ -4,8 +4,21 @@ const Schema = mongoose.Schema;
 
 const UsuarioSchema = new Schema({
     nombre: { type: String, required: true },
-    correo: { type: String },
+    correo: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true
+    },
+
     password: { type: String, required: true },
+    rol: {
+        type: String,
+        default: 'cliente',
+        enum: ['cliente', 'admin']
+    }
+
 });
 
 
